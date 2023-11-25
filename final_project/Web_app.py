@@ -24,14 +24,14 @@ def order_post():
     # if request.method == 'POST':
     name = request.form['name']
     email = request.form['email']
-    selected_items = request.form.getlist('order')
+    selected_items = request.form.getlist('order[]')
 
     # publisher code
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path("teak-formula-362813", "M21AIE228_token1")
     # Data must be a bytestring
-    data = "Hi " + name + ", your orders are: " + str(selected_items[0])
-    
+    data = "Hi " + name + ", your orders are: " + ", ".join(selected_items)
+    print(selected_items)
     data = data.encode("utf-8")
     # When you publish a message, the client returns a future.
     future = publisher.publish(topic_path, data)
@@ -88,7 +88,7 @@ def order_get():
     
  
 if __name__== "__main__":
-    app.run(host="0.0.0.0",port=80)
+    app.run(debug= True)
 
 
 
