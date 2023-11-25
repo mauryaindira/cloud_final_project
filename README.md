@@ -16,9 +16,11 @@ Step 5: Created the Project ID, Topic ID and subscription ID(will we used while 
 
 Step 6: create a Requirement file (req.text)
 
-    flask
-    sqlite3
-    google-cloud-pubsub
+            flask
+
+            sqlite3
+
+            google-cloud-pubsub
 
 
 Step 7: Run the flask application and use the local host weburl(e.g : http://127.0.0.1:5000)  
@@ -30,13 +32,17 @@ Steps 9: Successfully order submitted and confimration page appears (e.g: Thank 
 Step 10: Checked the Pub and sub queue for the multiple oders simultaneously.
 
 Step 11: checked the database for the for proper data entry.
-            Using Follwing commands: 
+            Using Follwing commands:
+
              sqlite3 <database_name.db>
+
              .table
+
              select *from <table_name>
 
 
 Step 10: checked the subsciber for reciving all the messages(Run python file) :
+
             python <subciber_file name.py>
             
 
